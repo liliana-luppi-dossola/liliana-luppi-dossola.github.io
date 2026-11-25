@@ -1,7 +1,6 @@
 (function () {
   const P = window.PAINTINGS;
   const $ = (s) => document.querySelector(s);
-  const fmt = (n) => "$" + n.toLocaleString("en-US");
   const EMAIL = "lilianawings@yahoo.com";
 
   document.getElementById("year").textContent = new Date().getFullYear();
@@ -14,7 +13,7 @@
     b.className = "card";
     b.dataset.cat = p.category;
     b.dataset.slug = p.slug;
-    b.setAttribute("aria-label", `${p.title}, ${p.medium}, ${fmt(p.price)}. Open viewing room.`);
+    b.setAttribute("aria-label", `${p.title}, ${p.medium}. Open viewing room.`);
     b.innerHTML = `
       <span class="frame">
         <img src="images/${p.slug}-thumb.jpg" alt="${p.title}" loading="lazy" width="${p.w}" height="${p.h}">
@@ -22,8 +21,8 @@
       </span>
       <span class="label">
         <span class="t">${p.title}</span>
-        <span class="p">${fmt(p.price)}</span>
-        <span class="m"><span class="dot" title="Available"></span>${p.medium}${p.size ? " · " + p.size : ""}</span>
+        <span class="m">${p.medium}${p.size ? " · " + p.size : ""}</span>
+        <span class="ed">Inquire about limited edition prints</span>
       </span>`;
     b.addEventListener("click", () => openRoom(i));
     grid.appendChild(b);
@@ -120,12 +119,10 @@
     const specs = [["Medium", p.medium]];
     if (p.size) specs.push(["Size", p.size]);
     if (p.location) specs.push(["Place", p.location]);
-    specs.push(["Status", "Available — original"]);
     $("#roomSpecs").innerHTML = specs.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");
     $("#roomDesc").textContent = p.description;
-    $("#roomPrice").innerHTML = `${fmt(p.price)}<small>USD</small>`;
-    const subj = encodeURIComponent(`Inquiry: "${p.title}"`);
-    const body = encodeURIComponent(`Hello Liliana,\n\nI'm interested in your painting "${p.title}" (${fmt(p.price)}). Could you tell me more about it?\n\nThank you,\n`);
+    const subj = encodeURIComponent(`Limited edition prints: "${p.title}"`);
+    const body = encodeURIComponent(`Hello Liliana,\n\nI'm interested in a limited edition print of your painting "${p.title}". Could you tell me more about the sizes and availability?\n\nThank you,\n`);
     $("#roomInquire").href = `mailto:${EMAIL}?subject=${subj}&body=${body}`;
     $("#trackTitle").textContent = `“${p.track}”`;
     $("#trackMood").textContent = p.mood;
