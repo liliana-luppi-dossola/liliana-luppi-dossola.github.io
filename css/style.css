@@ -69,6 +69,17 @@ h3 { font-family: var(--sans); font-weight: 600; font-size: 13px; letter-spacing
 .hero-text h1 { margin-bottom: 26px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
 .hero-art { margin: 0; }
+.hero-music { display: inline-flex; align-items: center; gap: 14px; margin-top: 30px; padding: 0; background: none; border: 0; cursor: pointer; text-align: left; color: var(--ink); font: inherit; }
+.hm-icon { width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--gold); display: grid; place-items: center; transition: background .25s; }
+.hero-music:hover .hm-icon { background: rgba(138,102,48,.08); }
+.hm-icon .eq { height: 14px; gap: 3px; }
+.hm-icon .eq i { width: 3px; height: 6px; }
+.hero-music.playing .hm-icon .eq i { animation: eq 1s ease-in-out infinite; }
+.hero-music.playing .hm-icon .eq i:nth-child(2) { animation-delay: .2s; }
+.hero-music.playing .hm-icon .eq i:nth-child(3) { animation-delay: .4s; }
+.hm-text { display: flex; flex-direction: column; line-height: 1.35; }
+.hm-label { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 22px; }
+.hm-sub { font-size: 14px; color: var(--muted); }
 .hero-frame { display: block; padding: 0; border: 0; background: none; cursor: zoom-in; width: 100%; }
 .frame, .hero-frame img, .room-frame img, .artist-art img {
   border: 10px solid #fff; outline: 1px solid rgba(165,130,74,.5); box-shadow: var(--shadow); }
