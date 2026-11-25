@@ -1,6 +1,6 @@
-# Liliana Dossola — Fine Art
+# Liliana Luppi Dossola — Fine Art
 
-Gallery website for the original paintings of Liliana Dossola. Each painting has its own viewing room and an original piece of music composed for it.
+Gallery website for the original paintings of Liliana Luppi Dossola. Each painting has its own viewing room and an original piece of music composed for it.
 
 ## Put it online with GitHub Pages (free)
 
@@ -19,7 +19,7 @@ In **Settings → Pages → Custom domain**, enter your domain (for example `lil
 
 ## Editing
 
-- **Prices, sizes, descriptions, order:** edit `js/paintings.js`. The paintings appear in the order they are listed.
+- **Sizes, descriptions, order:** edit `js/paintings.js`. The paintings appear in the order they are listed.
 - **Add a painting:** put a large image `images/new-slug.jpg` (about 1200 px on the long side) and a smaller `images/new-slug-thumb.jpg` (about 720 px) in `images/`, add an MP3 at `music/new-slug.mp3`, then add an entry to `js/paintings.js` with the same `slug`.
 - **Contact email:** search for `lilianawings@yahoo.com` in `index.html` and `js/app.js`.
 - **Share a single painting:** add `#slug` to the address, for example `.../#california-sunset`.
