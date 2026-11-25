@@ -25,4 +25,4 @@ In **Settings → Pages → Custom domain**, enter your domain (for example `lil
 - **Share a single painting:** add `#slug` to the address, for example `.../#california-sunset`.
 
 ## Music
-All 12 tracks were composed for this site and synthesized from scratch, with no samples or existing recordings, so they are free to use here.
+All the music on the site was composed for this site and synthesized from scratch, with no samples or existing recordings, so they are free to use here.
