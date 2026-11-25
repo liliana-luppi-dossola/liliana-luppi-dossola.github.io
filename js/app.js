@@ -16,7 +16,7 @@
     b.setAttribute("aria-label", `${p.title}, ${p.medium}. Open viewing room.`);
     b.innerHTML = `
       <span class="frame">
-        <img src="images/${p.slug}-thumb.jpg" alt="${p.title}" loading="lazy" width="${p.w}" height="${p.h}">
+        <img src="images/${p.slug}-thumb.jpg?v=5" alt="${p.title}" loading="lazy" width="${p.w}" height="${p.h}">
         <span class="listen">${playIcon} View &amp; listen</span>
       </span>
       <span class="label">
@@ -141,7 +141,7 @@
     img.classList.add("swap");
     const next = new Image();
     next.onload = () => { img.src = next.src; img.alt = p.title; requestAnimationFrame(() => img.classList.remove("swap")); };
-    next.src = `images/${p.slug}.jpg`;
+    next.src = `images/${p.slug}.jpg?v=5`;
     $("#roomCat").textContent = `${p.category} · Plate ${String(i + 1).padStart(2, "0")} of ${P.length}`;
     $("#roomTitle").textContent = p.title;
     const specs = [["Medium", p.medium]];

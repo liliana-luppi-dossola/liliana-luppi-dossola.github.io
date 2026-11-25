@@ -8,7 +8,7 @@ window.PAINTINGS = [
     size: "36 × 24 in",
     w: 786, h: 1196,
     description:
-      "A tall, quiet canvas of the Pacific at day's end. A band of rose and apricot light breaks beneath a heavy lavender sky, catching the crest of each wave, while two small figures stand at the water's edge to watch the sun slip into the horizon. The largest work in the collection.",
+      "A tall, quiet canvas of the Pacific at day's end. A band of rose and apricot light breaks beneath a heavy lavender sky, catching the crest of each wave, while a lone figure stands at the water's edge to watch the sun slip into the horizon. The largest work in the collection.",
     track: "Last Light",
     mood: "Warm piano and strings, slow and glowing"
   },
