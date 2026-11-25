@@ -61,6 +61,31 @@ window.PAINTINGS = [
     mood: "Shimmering celesta over harp, in a gentle 3/4"
   },
   {
+    slug: "coastal-view-la-jolla",
+    title: "Coastal View, La Jolla",
+    category: "Landscape",
+    medium: "Acrylic on canvas",
+    size: "22 × 28 in",
+    location: "La Jolla, California",
+    w: 943, h: 1200,
+    description:
+      "Looking down over a bend in the coast road at La Jolla, tall palms lean into a wide, wind-brushed sky while the Pacific spreads out in deep turquoise to the horizon. Strollers follow the walkway along green bluffs and sandstone ledges, and a pair of cars round the curve below in the bright afternoon light.",
+    track: "Coast Road",
+    mood: "Breezy piano over rippling guitar"
+  },
+  {
+    slug: "the-reader-in-the-garden",
+    title: "The Reader in the Garden",
+    category: "Figurative",
+    medium: "Acrylic on canvas",
+    size: "24 × 30 in",
+    w: 960, h: 1200,
+    description:
+      "A marble figure, book in hand, stands at the center of a hexagonal fountain, the water below glowing in cool aquamarine. Slender cypresses rise against a clear blue sky, a warm red garden wall catches the sun, and wildflowers in pink, violet and orange spill along the fountain's edge, with a distant villa resting on the green fields beyond.",
+    track: "Fountain Pages",
+    mood: "Singing strings over harp, in an unhurried 3/4"
+  },
+  {
     slug: "pacific-coast",
     title: "Pacific Coast",
     category: "Landscape",
