@@ -49,6 +49,18 @@ window.PAINTINGS = [
     mood: "Pan flute in a pentatonic air over harp"
   },
   {
+    slug: "reflections",
+    title: "Reflections",
+    category: "Landscape",
+    medium: "Acrylic on canvas",
+    size: "22 × 26 in",
+    w: 866, h: 1200,
+    description:
+      "A small stone cherub sits on the rim of a garden birdbath, gazing upward while the still water mirrors the sky and the trees above. Beyond, a sunlit path curves past a green lawn, and in the foreground hostas, ferns and crimson coleus frame the scene in cool, shaded greens.",
+    track: "Still Water",
+    mood: "Shimmering celesta over harp, in a gentle 3/4"
+  },
+  {
     slug: "pacific-coast",
     title: "Pacific Coast",
     category: "Landscape",
