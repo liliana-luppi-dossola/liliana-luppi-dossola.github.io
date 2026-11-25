@@ -66,7 +66,7 @@ window.PAINTINGS = [
     category: "Landscape",
     medium: "Acrylic on canvas",
     size: "22 × 28 in",
-    location: "La Jolla, California",
+    location: "La Jolla, CA",
     w: 943, h: 1200,
     description:
       "Looking down over a bend in the coast road at La Jolla, tall palms lean into a wide, wind-brushed sky while the Pacific spreads out in deep turquoise to the horizon. Strollers follow the walkway along green bluffs and sandstone ledges, and a pair of cars round the curve below in the bright afternoon light.",
