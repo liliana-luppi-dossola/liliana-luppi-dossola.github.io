@@ -25,6 +25,18 @@ window.PAINTINGS = [
     mood: "Renaissance jig for recorder, lute and tabor"
   },
   {
+    slug: "the-arborist",
+    title: "The Arborist",
+    category: "Figurative",
+    medium: "Acrylic on canvas",
+    size: "22 × 28 in",
+    w: 943, h: 1200,
+    description:
+      "A young woman in a crisp white blouse and blue sash pauses on a sunlit garden terrace, one hand resting on a potted fruit tree, the other raised as she gazes into the distance. Ochre walls, terracotta pots and vine leaves glowing in autumn light frame a quiet, contemplative moment.",
+    track: "Golden Terrace",
+    mood: "A gentle waltz for flute and guitar"
+  },
+  {
     slug: "the-piper-at-hillwood",
     title: "The Piper at Hillwood",
     category: "Landscape",
