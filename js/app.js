@@ -50,11 +50,19 @@
   let soundOn = true;
   try { soundOn = localStorage.getItem("ld-sound") !== "off"; } catch (e) {}
   let fadeTimer = null;
+  const HOME = "gallery-theme";
+  let homePos = 0;
+  const heroBtn = $("#heroMusic");
 
   function setToggle() {
     toggle.setAttribute("aria-pressed", String(soundOn));
     toggle.querySelector(".sound-label").textContent = soundOn ? "Music on" : "Music off";
     toggle.classList.toggle("playing", soundOn && !audio.paused);
+    if (heroBtn) {
+      const on = !audio.paused && audio.src.endsWith(`${HOME}.mp3`);
+      heroBtn.classList.toggle("playing", on);
+      heroBtn.querySelector(".hm-label").textContent = on ? "Pause the gallery theme" : "Play the gallery theme";
+    }
   }
   function fadeTo(target, ms, done) {
     clearInterval(fadeTimer);
@@ -67,7 +75,11 @@
   function playTrack(slug) {
     const src = `music/${slug}.mp3`;
     const begin = () => {
-      if (!audio.src.endsWith(src)) { audio.src = src; audio.currentTime = 0; }
+      if (!audio.src.endsWith(src)) {
+        if (audio.src.endsWith(`${HOME}.mp3`)) homePos = audio.currentTime || 0;
+        audio.src = src;
+        if (slug === HOME && homePos) audio.addEventListener("loadedmetadata", () => { audio.currentTime = homePos; }, { once: true });
+      }
       audio.volume = 0;
       const pr = audio.play();
       if (pr && pr.catch) pr.catch(() => updatePlayer());
@@ -95,9 +107,25 @@
     soundOn = !soundOn;
     try { localStorage.setItem("ld-sound", soundOn ? "on" : "off"); } catch (e) {}
     if (!soundOn) stopTrack(400);
-    else if (current >= 0) playTrack(P[current].slug);
+    else playTrack(current >= 0 ? P[current].slug : HOME);
     setToggle();
   });
+  if (heroBtn) heroBtn.addEventListener("click", () => {
+    if (!audio.paused && audio.src.endsWith(`${HOME}.mp3`)) { stopTrack(400); soundOn = false; }
+    else { soundOn = true; playTrack(HOME); }
+    try { localStorage.setItem("ld-sound", soundOn ? "on" : "off"); } catch (e) {}
+    setToggle();
+  });
+  // browsers only allow sound after the visitor interacts: start the theme on the first tap or key press
+  const firstTouch = (e) => {
+    if (e.target.closest && e.target.closest("#soundToggle, #heroMusic, .card, [data-open], .room")) return;
+    document.removeEventListener("pointerdown", firstTouch);
+    document.removeEventListener("keydown", firstTouch);
+    if (soundOn && audio.paused && current < 0) playTrack(HOME);
+  };
+  document.addEventListener("pointerdown", firstTouch);
+  document.addEventListener("keydown", firstTouch);
+
   $("#playBtn").addEventListener("click", () => {
     if (audio.paused) { soundOn = true; try { localStorage.setItem("ld-sound", "on"); } catch (e) {} playTrack(P[current].slug); }
     else stopTrack(400);
@@ -142,7 +170,7 @@
   }
   function closeRoom() {
     room.classList.remove("open");
-    stopTrack(500);
+    if (soundOn) playTrack(HOME); else stopTrack(500);
     setTimeout(() => { room.hidden = true; document.body.style.overflow = ""; }, 450);
     history.replaceState(null, "", location.pathname + location.search + "#collection");
     current = -1;
